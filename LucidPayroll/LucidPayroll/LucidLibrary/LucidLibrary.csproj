@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8FF004FE-6BA5-407E-A9D9-EDC14FBC4298}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LucidLibrary</RootNamespace>
+    <AssemblyName>LucidLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Csv\TcCsvDataField.cs" />
+    <Compile Include="Csv\TcCsvDataRow.cs" />
+    <Compile Include="Csv\TcCsvFile.cs" />
+    <Compile Include="Csv\TcCsvValueDecorder.cs" />
+    <Compile Include="Date\TcDateDiff.cs" />
+    <Compile Include="Date\TcYearMonth.cs" />
+    <Compile Include="Db\TcBean.cs" />
+    <Compile Include="Db\TcBeansLoader.cs" />
+    <Compile Include="Db\TcDatabase.cs" />
+    <Compile Include="Db\TcDatabaseConnectionParameters.cs" />
+    <Compile Include="Db\TcDbValueReader.cs" />
+    <Compile Include="Db\TcStoredProcedure.cs" />
+    <Compile Include="Db\TcView.cs" />
+    <Compile Include="Db\TcViewsLoader.cs" />
+    <Compile Include="General\TcCrypto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sys\TcDirectory.cs" />
+    <Compile Include="UIComponents\TcBackgroundWorker.cs" />
+    <Compile Include="General\TcBindingList.cs" />
+    <Compile Include="Types\TcDecimal.cs" />
+    <Compile Include="Types\TcNIC.cs" />
+    <Compile Include="General\TcPropertyComparer.cs" />
+    <Compile Include="Entries\TcRegistryEntry.cs" />
+    <Compile Include="Types\TcString.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

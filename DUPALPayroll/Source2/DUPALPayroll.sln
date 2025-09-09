@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DUPALPayroll", "DUPALPayroll\DUPALPayroll.csproj", "{B786A604-A6B8-44B9-9FF3-FE9259D11C63}"
+EndProject
+Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "DUPALPayrollAISetup", "DUPALPayrollAISetup\DUPALPayrollAISetup.aiproj", "{BEA1DC25-F9CC-4EE9-A936-228DA1408488}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B786A604-A6B8-44B9-9FF3-FE9259D11C63} = {B786A604-A6B8-44B9-9FF3-FE9259D11C63}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		DVD-5|Any CPU = DVD-5|Any CPU
+		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B786A604-A6B8-44B9-9FF3-FE9259D11C63}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{B786A604-A6B8-44B9-9FF3-FE9259D11C63}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{B786A604-A6B8-44B9-9FF3-FE9259D11C63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B786A604-A6B8-44B9-9FF3-FE9259D11C63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B786A604-A6B8-44B9-9FF3-FE9259D11C63}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{B786A604-A6B8-44B9-9FF3-FE9259D11C63}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{B786A604-A6B8-44B9-9FF3-FE9259D11C63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B786A604-A6B8-44B9-9FF3-FE9259D11C63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B786A604-A6B8-44B9-9FF3-FE9259D11C63}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{B786A604-A6B8-44B9-9FF3-FE9259D11C63}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{BEA1DC25-F9CC-4EE9-A936-228DA1408488}.CD_ROM|Any CPU.ActiveCfg = All
+		{BEA1DC25-F9CC-4EE9-A936-228DA1408488}.CD_ROM|Any CPU.Build.0 = All
+		{BEA1DC25-F9CC-4EE9-A936-228DA1408488}.Debug|Any CPU.ActiveCfg = All
+		{BEA1DC25-F9CC-4EE9-A936-228DA1408488}.DVD-5|Any CPU.ActiveCfg = All
+		{BEA1DC25-F9CC-4EE9-A936-228DA1408488}.DVD-5|Any CPU.Build.0 = All
+		{BEA1DC25-F9CC-4EE9-A936-228DA1408488}.Release|Any CPU.ActiveCfg = All
+		{BEA1DC25-F9CC-4EE9-A936-228DA1408488}.Release|Any CPU.Build.0 = All
+		{BEA1DC25-F9CC-4EE9-A936-228DA1408488}.SingleImage|Any CPU.ActiveCfg = All
+		{BEA1DC25-F9CC-4EE9-A936-228DA1408488}.SingleImage|Any CPU.Build.0 = All
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

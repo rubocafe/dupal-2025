@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C529D071-8E8B-4BE8-9BBB-8175D39E49AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LucidPayroll</RootNamespace>
+    <AssemblyName>LucidPayroll</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Database\TcDatabaseConnectionParametersFromRegistry.cs" />
+    <Compile Include="Database\TiDatabaseConnectionParameters.cs" />
+    <Compile Include="General\TcKeys.cs" />
+    <Compile Include="Model\EpfAndEtf\TcEpfAndEtfRate.cs" />
+    <Compile Include="Model\EpfAndEtf\TcEpfAndEtfRates.cs" />
+    <Compile Include="Model\Salary\Allowance\TcAllowance.cs" />
+    <Compile Include="Model\Salary\Allowance\TcAllowances.cs" />
+    <Compile Include="Model\Salary\Allowance\TcDummyAllowance.cs" />
+    <Compile Include="Model\Salary\Commission\TcCommission.cs" />
+    <Compile Include="Model\Salary\Commission\TcCommissions.cs" />
+    <Compile Include="Model\Salary\Commission\TcDummyCommmission.cs" />
+    <Compile Include="Model\Salary\Deduction\TcDeductions.cs" />
+    <Compile Include="Model\Salary\Deduction\TcDeduction.cs" />
+    <Compile Include="Model\Salary\Deduction\TcDummyDeduction.cs" />
+    <Compile Include="Model\Salary\Incentive\TcDummyIncentive.cs" />
+    <Compile Include="Model\Salary\Incentive\TcIncentives.cs" />
+    <Compile Include="Model\Salary\Incentive\TcIncentive.cs" />
+    <Compile Include="Model\Salary\OverTime\TcDummyOverTime.cs" />
+    <Compile Include="Model\Salary\OverTime\TcOverTimes.cs" />
+    <Compile Include="Model\Salary\TcMonthlySalary.cs" />
+    <Compile Include="Model\Salary\OverTime\TcOverTime.cs" />
+    <Compile Include="Model\TcPerson.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LucidLibrary\LucidLibrary.csproj">
+      <Project>{8ff004fe-6ba5-407e-a9d9-edc14fbc4298}</Project>
+      <Name>LucidLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,999 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B786A604-A6B8-44B9-9FF3-FE9259D11C63}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DUPALPayroll</RootNamespace>
+    <AssemblyName>DUPALPayroll</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\DupalLogo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.DocumentObjectModel-WPF, Version=1.31.3066.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\PdfSharp_1.31\MigraDoc.DocumentObjectModel-WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.Rendering-WPF, Version=1.31.3066.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\PdfSharp_1.31\MigraDoc.Rendering-WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.RtfRendering-WPF, Version=1.31.3066.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\PdfSharp_1.31\MigraDoc.RtfRendering-WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp-WPF, Version=1.31.1789.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\PdfSharp_1.31\PdfSharp-WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\TcForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\TcForm.Designer.cs">
+      <DependentUpon>TcForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TcHeaderNamesChecker.cs" />
+    <Compile Include="Controls\TcNavigationButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TcNavigationButton.designer.cs">
+      <DependentUpon>TcNavigationButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TcSearchHelper.cs" />
+    <Compile Include="Controls\TcTabControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\TcTabControlForm.Designer.cs">
+      <DependentUpon>TcTabControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TiSearchable.cs" />
+    <Compile Include="General\TcFormatter.cs" />
+    <Compile Include="General\TcEnum.cs" />
+    <Compile Include="General\TcLog.cs" />
+    <Compile Include="General\TcMessageBox.cs" />
+    <Compile Include="General\TcSettings.cs" />
+    <Compile Include="General\TcTheme.cs" />
+    <Compile Include="General\TcVersions.cs" />
+    <Compile Include="Library\Csv\TcCsvDataField.cs" />
+    <Compile Include="Library\Csv\TcCsvDataRow.cs" />
+    <Compile Include="Library\Csv\TcCsvFile.cs" />
+    <Compile Include="Library\Csv\TcCsvValueDecorder.cs" />
+    <Compile Include="Library\Date\TcDateDiff.cs" />
+    <Compile Include="Library\Date\TcYearMonth.cs" />
+    <Compile Include="Library\Sys\TcDirectory.cs" />
+    <Compile Include="Library\TcBackgroundWorker.cs" />
+    <Compile Include="Library\TcBindingList.cs" />
+    <Compile Include="Library\TcDecimal.cs" />
+    <Compile Include="Library\TcNIC.cs" />
+    <Compile Include="Library\TcPropertyComparer.cs" />
+    <Compile Include="Library\TcRegistryEntry.cs" />
+    <Compile Include="Library\TcString.cs" />
+    <Compile Include="Library\Zip\TcZip.cs" />
+    <Compile Include="UI\Auditors\Analyze\TcAuditorsAnalyzedRow.cs" />
+    <Compile Include="UI\Auditors\Analyze\TcAuditorsAnalyzeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Auditors\Analyze\TcAuditorsAnalyzeForm.Designer.cs">
+      <DependentUpon>TcAuditorsAnalyzeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Auditors\Analyze\TcAuditorsAnalyzer.cs" />
+    <Compile Include="UI\Auditors\Generate\TcAuditorsPayMasterGenerateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Auditors\Generate\TcAuditorsPayMasterGenerateForm.Designer.cs">
+      <DependentUpon>TcAuditorsPayMasterGenerateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Auditors\Generate\TcAuditorsSalarySlipsCreator.cs" />
+    <Compile Include="UI\Auditors\MasterData\TcAuditorsMasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Auditors\MasterData\TcAuditorsMasterForm.Designer.cs">
+      <DependentUpon>TcAuditorsMasterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Auditors\MasterData\TcAuditorsMasterLoader.cs" />
+    <Compile Include="UI\Auditors\MasterData\TcAuditorsMasterRow.cs" />
+    <Compile Include="UI\Auditors\MasterData\TcAuditorsMasterTable.cs" />
+    <Compile Include="UI\Auditors\MasterData\TeAuditorsMasterFilter.cs" />
+    <Compile Include="UI\Auditors\Salary\TcAuditorsSalaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Auditors\Salary\TcAuditorsSalaryForm.Designer.cs">
+      <DependentUpon>TcAuditorsSalaryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Auditors\Salary\TcAuditorsSalaryLoader.cs" />
+    <Compile Include="UI\Auditors\Salary\TcAuditorsSalaryRow.cs" />
+    <Compile Include="UI\Auditors\Salary\TcAuditorsSalaryTable.cs" />
+    <Compile Include="UI\Auditors\Salary\TeAuditorsSalaryFilter.cs" />
+    <Compile Include="UI\Auditors\Settings\TcAuditorsSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Auditors\Settings\TcAuditorsSettingsForm.Designer.cs">
+      <DependentUpon>TcAuditorsSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Auditors\TcAuditorsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Auditors\TcAuditorsForm.Designer.cs">
+      <DependentUpon>TcAuditorsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CommissionAgents\Analyze\TcCommissionAgentsAnalyzedRow.cs" />
+    <Compile Include="UI\CommissionAgents\Analyze\TcCommissionAgentsAnalyzer.cs" />
+    <Compile Include="UI\CommissionAgents\CommissionsHeld\TcCommissionsHeldTable.cs" />
+    <Compile Include="UI\CommissionAgents\CommissionsHeld\TeCommissionHeldFilter.cs" />
+    <Compile Include="UI\CommissionAgents\Commissions\TeCommissionsFilter.cs" />
+    <Compile Include="UI\Common\Epf\TcEpfCsvFileReader.cs" />
+    <Compile Include="UI\Common\Epf\TcEpfCsvFileWriter.cs" />
+    <Compile Include="UI\Common\Epf\TcEpfDestinationData.cs" />
+    <Compile Include="UI\Common\Epf\TcParsedEpfCsvFileInformation.cs" />
+    <Compile Include="UI\Common\Epf\TcEpfFile.cs" />
+    <Compile Include="UI\Common\Epf\TcEpfFileValidator.cs" />
+    <Compile Include="UI\Common\Epf\TcEpfOriginData.cs" />
+    <Compile Include="UI\Common\Epf\TcEpfRow.cs" />
+    <Compile Include="UI\Common\Epf\TcEpfFileReader.cs" />
+    <Compile Include="UI\Common\Epf\TcEpfFileWriter.cs" />
+    <Compile Include="UI\Common\Epf\TeEpfError.cs" />
+    <Compile Include="UI\Common\Etf\TcEtfFileValidator.cs" />
+    <Compile Include="UI\Common\Etf\TcEtfCsvFileReader.cs" />
+    <Compile Include="UI\Common\Etf\TcEtfCsvFileWriter.cs" />
+    <Compile Include="UI\Common\Etf\TcEtfDetailOriginData.cs" />
+    <Compile Include="UI\Common\Etf\TcEtfDetailDestinationData.cs" />
+    <Compile Include="UI\Common\Etf\TcEtfDetailRow.cs" />
+    <Compile Include="UI\Common\Etf\TcEtfFile.cs" />
+    <Compile Include="UI\Common\Etf\TcEtfFileReader.cs" />
+    <Compile Include="UI\Common\Etf\TcEtfFileWriter.cs" />
+    <Compile Include="UI\Common\Etf\TcEtfHeaderRow.cs" />
+    <Compile Include="UI\Common\Etf\TcParsedEtfCsvFileInformation.cs" />
+    <Compile Include="UI\Common\Etf\TeEtfError.cs" />
+    <Compile Include="UI\Common\GenerateBean\TcOutputFilesGenerator.cs" />
+    <Compile Include="UI\Common\GenerateBean\TcGenerateFormHelper.cs" />
+    <Compile Include="UI\CommissionAgents\MasterData\TcCommissionAgentsMasterTable.cs" />
+    <Compile Include="UI\CommissionAgents\Analyze\TcCommissionAgentsAnalyzeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CommissionAgents\Analyze\TcCommissionAgentsAnalyzeForm.Designer.cs">
+      <DependentUpon>TcCommissionAgentsAnalyzeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CommissionAgents\Commissions\TcCommissionsTable.cs" />
+    <Compile Include="UI\CommissionAgents\Analyze\TeCommissionAgentsAnalyzeFilter.cs" />
+    <Compile Include="UI\CommissionAgents\MasterData\TeCommissionAgentsMasterFilter.cs" />
+    <Compile Include="UI\CommissionAgents\Generate\TcCommissionAgentsConditionsChecker.cs" />
+    <Compile Include="UI\CommissionAgents\Settings\TcCommissionAgentsSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CommissionAgents\Settings\TcCommissionAgentsSettingsForm.Designer.cs">
+      <DependentUpon>TcCommissionAgentsSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CommissionAgents\TcCommissionAgentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CommissionAgents\TcCommissionAgentsForm.Designer.cs">
+      <DependentUpon>TcCommissionAgentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Common\AnalyzeBean\TcAnalyzeFormHelper.cs" />
+    <Compile Include="UI\Common\AnalyzeBean\TcSalaryAnalyzedRow.cs" />
+    <Compile Include="UI\Common\AnalyzeBean\TcValidityChecker.cs" />
+    <Compile Include="UI\Common\AnalyzeBean\TeEmployeeAnalyzeFilter.cs" />
+    <Compile Include="UI\Common\BanksAndBranches\TcBanksAndBranchesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Common\BanksAndBranches\TcBanksAndBranchesForm.Designer.cs">
+      <DependentUpon>TcBanksAndBranchesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Common\BanksAndBranches\TcBanksAndBranchesLoader.cs" />
+    <Compile Include="UI\Common\BanksAndBranches\TcBanksAndBranchesRow.cs" />
+    <Compile Include="UI\Common\BanksAndBranches\TcBanksAndBranchesTable.cs" />
+    <Compile Include="UI\Common\BanksAndBranches\TeBanksAndBranchesFilter.cs" />
+    <Compile Include="UI\Common\GenerateBean\TcSalaryConditionsChecker.cs" />
+    <Compile Include="UI\Common\MasterBean\TcSalaryMasterTable.cs" />
+    <Compile Include="UI\Common\MasterBean\TcSalaryMasterLoader.cs" />
+    <Compile Include="UI\Common\MasterBean\TcSalaryMasterRow.cs" />
+    <Compile Include="UI\Common\PayMaster\TcPayMasterRowsValidator.cs" />
+    <Compile Include="UI\Common\PayMaster\TcPayMasterDestinationData.cs" />
+    <Compile Include="UI\Common\PayMaster\TiPayMasterDestination.cs" />
+    <Compile Include="UI\Common\SalaryBean\TcSalaryLoader.cs" />
+    <Compile Include="UI\Common\SalaryBean\TcSalaryTable.cs" />
+    <Compile Include="UI\Common\SalaryBean\TcSalaryRow.cs" />
+    <Compile Include="UI\Common\SalarySlip\TcSalarySlipsCreator.cs" />
+    <Compile Include="UI\Common\TcAboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Common\TcAboutBox.Designer.cs">
+      <DependentUpon>TcAboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Common\TcNavigationFormsController.cs" />
+    <Compile Include="UI\Common\TcParsedCsvFileInformation.cs" />
+    <Compile Include="UI\Common\TcZipFileExporter.cs" />
+    <Compile Include="UI\Common\TcPaths.cs" />
+    <Compile Include="UI\CallCenterInbound\Analyze\TcCallCenterInboundAnalyzedRow.cs" />
+    <Compile Include="UI\CallCenterInbound\Analyze\TcCallCenterInboundAnalyzeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CallCenterInbound\Analyze\TcCallCenterInboundAnalyzeForm.Designer.cs">
+      <DependentUpon>TcCallCenterInboundAnalyzeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CallCenterInbound\Analyze\TcCallCenterInboundAnalyzer.cs" />
+    <Compile Include="UI\CallCenterInbound\Generate\TcCallCenterInboundPayMasterGenerateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CallCenterInbound\Generate\TcCallCenterInboundPayMasterGenerateForm.Designer.cs">
+      <DependentUpon>TcCallCenterInboundPayMasterGenerateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CallCenterInbound\Generate\TcCallCenterInboundSalarySlipsCreator.cs" />
+    <Compile Include="UI\CallCenterInbound\MasterData\TcCallCenterInboundMasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CallCenterInbound\MasterData\TcCallCenterInboundMasterForm.Designer.cs">
+      <DependentUpon>TcCallCenterInboundMasterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CallCenterInbound\MasterData\TcCallCenterInboundMasterLoader.cs" />
+    <Compile Include="UI\CallCenterInbound\MasterData\TcCallCenterInboundMasterRow.cs" />
+    <Compile Include="UI\CallCenterInbound\MasterData\TcCallCenterInboundMasterTable.cs" />
+    <Compile Include="UI\CallCenterInbound\MasterData\TeCallCenterInboundMasterFilter.cs" />
+    <Compile Include="UI\CallCenterInbound\Salary\TcCallCenterInboundSalaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CallCenterInbound\Salary\TcCallCenterInboundSalaryForm.Designer.cs">
+      <DependentUpon>TcCallCenterInboundSalaryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CallCenterInbound\Salary\TcCallCenterInboundSalaryLoader.cs" />
+    <Compile Include="UI\CallCenterInbound\Salary\TcCallCenterInboundSalaryRow.cs" />
+    <Compile Include="UI\CallCenterInbound\Salary\TcCallCenterInboundSalaryTable.cs" />
+    <Compile Include="UI\CallCenterInbound\Salary\TeCallCenterInboundSalaryFilter.cs" />
+    <Compile Include="UI\CallCenterInbound\Settings\TcCallCenterInboundSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CallCenterInbound\Settings\TcCallCenterInboundSettingsForm.Designer.cs">
+      <DependentUpon>TcCallCenterInboundSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CallCenterInbound\TcCallCenterInboundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CallCenterInbound\TcCallCenterInboundForm.Designer.cs">
+      <DependentUpon>TcCallCenterInboundForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CallCenterOutbound\Analyze\TcCallCenterOutboundAnalyzedRow.cs" />
+    <Compile Include="UI\CallCenterOutbound\Analyze\TcCallCenterOutboundAnalyzeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CallCenterOutbound\Analyze\TcCallCenterOutboundAnalyzeForm.Designer.cs">
+      <DependentUpon>TcCallCenterOutboundAnalyzeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CallCenterOutbound\Analyze\TcCallCenterOutboundAnalyzer.cs" />
+    <Compile Include="UI\CallCenterOutbound\Generate\TcCallCenterOutboundPayMasterGenerateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CallCenterOutbound\Generate\TcCallCenterOutboundPayMasterGenerateForm.Designer.cs">
+      <DependentUpon>TcCallCenterOutboundPayMasterGenerateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CallCenterOutbound\Generate\TcCallCenterOutboundSalarySlipsCreator.cs" />
+    <Compile Include="UI\CallCenterOutbound\MasterData\TcCallCenterOutboundMasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CallCenterOutbound\MasterData\TcCallCenterOutboundMasterForm.Designer.cs">
+      <DependentUpon>TcCallCenterOutboundMasterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CallCenterOutbound\MasterData\TcCallCenterOutboundMasterLoader.cs" />
+    <Compile Include="UI\CallCenterOutbound\MasterData\TcCallCenterOutboundMasterRow.cs" />
+    <Compile Include="UI\CallCenterOutbound\MasterData\TcCallCenterOutboundMasterTable.cs" />
+    <Compile Include="UI\CallCenterOutbound\MasterData\TeCallCenterOutboundMasterFilter.cs" />
+    <Compile Include="UI\CallCenterOutbound\Salary\TcCallCenterOutboundSalaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CallCenterOutbound\Salary\TcCallCenterOutboundSalaryForm.Designer.cs">
+      <DependentUpon>TcCallCenterOutboundSalaryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CallCenterOutbound\Salary\TcCallCenterOutboundSalaryLoader.cs" />
+    <Compile Include="UI\CallCenterOutbound\Salary\TcCallCenterOutboundSalaryRow.cs" />
+    <Compile Include="UI\CallCenterOutbound\Salary\TcCallCenterOutboundSalaryTable.cs" />
+    <Compile Include="UI\CallCenterOutbound\Salary\TeCallCenterOutboundSalaryFilter.cs" />
+    <Compile Include="UI\CallCenterOutbound\Settings\TcCallCenterOutboundSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CallCenterOutbound\Settings\TcCallCenterOutboundSettingsForm.Designer.cs">
+      <DependentUpon>TcCallCenterOutboundSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CallCenterOutbound\TcCallCenterOutboundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CallCenterOutbound\TcCallCenterOutboundForm.Designer.cs">
+      <DependentUpon>TcCallCenterOutboundForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CareTakers\Analyze\TcCareTakersAnalyzedRow.cs" />
+    <Compile Include="UI\CareTakers\Analyze\TcCareTakersAnalyzeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CareTakers\Analyze\TcCareTakersAnalyzeForm.Designer.cs">
+      <DependentUpon>TcCareTakersAnalyzeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CareTakers\Analyze\TcCareTakersAnalyzer.cs" />
+    <Compile Include="UI\CareTakers\Analyze\TeCareTakersAnalyzeFilter.cs" />
+    <Compile Include="UI\CareTakers\Payments\TcCareTakersPaymentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CareTakers\Payments\TcCareTakersPaymentsForm.Designer.cs">
+      <DependentUpon>TcCareTakersPaymentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CareTakers\Payments\TcCareTakersPaymentsLoader.cs" />
+    <Compile Include="UI\CareTakers\Payments\TcCareTakersPaymentsRow.cs" />
+    <Compile Include="UI\CareTakers\Payments\TcCareTakersPaymentsTable.cs" />
+    <Compile Include="UI\CareTakers\Payments\TeCareTakersPaymentsFilter.cs" />
+    <Compile Include="UI\CareTakers\Generate\TcCareTakersConditionsChecker.cs" />
+    <Compile Include="UI\CareTakers\Generate\TcCareTakersPayMasterGenerateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CareTakers\Generate\TcCareTakersPayMasterGenerateForm.Designer.cs">
+      <DependentUpon>TcCareTakersPayMasterGenerateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CareTakers\MasterData\TcCareTakersMasterDataLoader.cs" />
+    <Compile Include="UI\CareTakers\MasterData\TcCareTakersMasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CareTakers\MasterData\TcCareTakersMasterForm.Designer.cs">
+      <DependentUpon>TcCareTakersMasterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CareTakers\MasterData\TcCareTakersMasterRow.cs" />
+    <Compile Include="UI\CareTakers\MasterData\TcCareTakersMasterTable.cs" />
+    <Compile Include="UI\CareTakers\MasterData\TeCareTakersMasterFilter.cs" />
+    <Compile Include="UI\CareTakers\Settings\TcCareTakersSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CareTakers\Settings\TcCareTakersSettingsForm.Designer.cs">
+      <DependentUpon>TcCareTakersSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CareTakers\TcCareTakersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CareTakers\TcCareTakersForm.Designer.cs">
+      <DependentUpon>TcCareTakersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuration\ConfigFile\TcConfigurationFile.cs" />
+    <Compile Include="UI\Configuration\ConfigFile\TcConfigurationFileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuration\ConfigFile\TcConfigurationFileForm.Designer.cs">
+      <DependentUpon>TcConfigurationFileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuration\ConfigFile\TcConfigurations.cs" />
+    <Compile Include="UI\Configuration\Settings\TcConfigurationSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuration\Settings\TcConfigurationSettingsForm.Designer.cs">
+      <DependentUpon>TcConfigurationSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuration\TcConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuration\TcConfigurationForm.Designer.cs">
+      <DependentUpon>TcConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OfficeStaff\Analyze\TcOfficeStaffAnalyzedRow.cs" />
+    <Compile Include="UI\OfficeStaff\Analyze\TcOfficeStaffAnalyzeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OfficeStaff\Analyze\TcOfficeStaffAnalyzeForm.Designer.cs">
+      <DependentUpon>TcOfficeStaffAnalyzeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OfficeStaff\Analyze\TcOfficeStaffAnalyzer.cs" />
+    <Compile Include="UI\OfficeStaff\Generate\TcOfficeStaffPayMasterGenerateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OfficeStaff\Generate\TcOfficeStaffPayMasterGenerateForm.Designer.cs">
+      <DependentUpon>TcOfficeStaffPayMasterGenerateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OfficeStaff\Generate\TcOfficeStaffSalarySlipsCreator.cs" />
+    <Compile Include="UI\OfficeStaff\MasterData\TcOfficeStaffMasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OfficeStaff\MasterData\TcOfficeStaffMasterForm.Designer.cs">
+      <DependentUpon>TcOfficeStaffMasterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OfficeStaff\MasterData\TcOfficeStaffMasterLoader.cs" />
+    <Compile Include="UI\OfficeStaff\MasterData\TcOfficeStaffMasterRow.cs" />
+    <Compile Include="UI\OfficeStaff\MasterData\TcOfficeStaffMasterTable.cs" />
+    <Compile Include="UI\OfficeStaff\MasterData\TeOfficeStaffMasterFilter.cs" />
+    <Compile Include="UI\OfficeStaff\Salary\TcOfficeStaffSalaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OfficeStaff\Salary\TcOfficeStaffSalaryForm.Designer.cs">
+      <DependentUpon>TcOfficeStaffSalaryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OfficeStaff\Salary\TcOfficeStaffSalaryLoader.cs" />
+    <Compile Include="UI\OfficeStaff\Salary\TcOfficeStaffSalaryRow.cs" />
+    <Compile Include="UI\OfficeStaff\Salary\TcOfficeStaffSalaryTable.cs" />
+    <Compile Include="UI\OfficeStaff\Salary\TeOfficeStaffSalaryFilter.cs" />
+    <Compile Include="UI\OfficeStaff\Settings\TcOfficeStaffSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OfficeStaff\Settings\TcOfficeStaffSettingsForm.Designer.cs">
+      <DependentUpon>TcOfficeStaffSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OfficeStaff\TcOfficeStaffForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OfficeStaff\TcOfficeStaffForm.Designer.cs">
+      <DependentUpon>TcOfficeStaffForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Epf\Epf\TcEpfForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Epf\Epf\TcEpfForm.Designer.cs">
+      <DependentUpon>TcEpfForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Epf\Settings\TcEpfSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Epf\Settings\TcEpfSettingsForm.Designer.cs">
+      <DependentUpon>TcEpfSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Epf\TcEpfControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Epf\TcEpfControlForm.Designer.cs">
+      <DependentUpon>TcEpfControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Etf\Etf\TcEtfForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Etf\Etf\TcEtfForm.Designer.cs">
+      <DependentUpon>TcEtfForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Etf\Settings\TcEtfSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Etf\Settings\TcEtfSettingsForm.Designer.cs">
+      <DependentUpon>TcEtfSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Etf\TcEtfControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Etf\TcEtfControlForm.Designer.cs">
+      <DependentUpon>TcEtfControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SupervisorsAndBackOffice\Analyze\TcSupervisorsAndBackOfficeAnalyzedRow.cs" />
+    <Compile Include="UI\SupervisorsAndBackOffice\Analyze\TcSupervisorsAndBackOfficeAnalyzeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SupervisorsAndBackOffice\Analyze\TcSupervisorsAndBackOfficeAnalyzeForm.Designer.cs">
+      <DependentUpon>TcSupervisorsAndBackOfficeAnalyzeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SupervisorsAndBackOffice\Analyze\TcSupervisorsAndBackOfficeAnalyzer.cs" />
+    <Compile Include="UI\SupervisorsAndBackOffice\Generate\TcSupervisorsAndBackOfficePayMasterGenerateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SupervisorsAndBackOffice\Generate\TcSupervisorsAndBackOfficePayMasterGenerateForm.Designer.cs">
+      <DependentUpon>TcSupervisorsAndBackOfficePayMasterGenerateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SupervisorsAndBackOffice\Generate\TcSupervisorsAndBackOfficeSalarySlipsCreator.cs" />
+    <Compile Include="UI\SupervisorsAndBackOffice\MasterData\TcSupervisorsAndBackOfficeMasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SupervisorsAndBackOffice\MasterData\TcSupervisorsAndBackOfficeMasterForm.Designer.cs">
+      <DependentUpon>TcSupervisorsAndBackOfficeMasterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SupervisorsAndBackOffice\MasterData\TcSupervisorsAndBackOfficeMasterLoader.cs" />
+    <Compile Include="UI\SupervisorsAndBackOffice\MasterData\TcSupervisorsAndBackOfficeMasterRow.cs" />
+    <Compile Include="UI\SupervisorsAndBackOffice\MasterData\TcSupervisorsAndBackOfficeMasterTable.cs" />
+    <Compile Include="UI\SupervisorsAndBackOffice\MasterData\TeSupervisorsAndBackOfficeMasterFilter.cs" />
+    <Compile Include="UI\SupervisorsAndBackOffice\Salary\TcSupervisorsAndBackOfficeSalaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SupervisorsAndBackOffice\Salary\TcSupervisorsAndBackOfficeSalaryForm.Designer.cs">
+      <DependentUpon>TcSupervisorsAndBackOfficeSalaryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SupervisorsAndBackOffice\Salary\TcSupervisorsAndBackOfficeSalaryLoader.cs" />
+    <Compile Include="UI\SupervisorsAndBackOffice\Salary\TcSupervisorsAndBackOfficeSalaryRow.cs" />
+    <Compile Include="UI\SupervisorsAndBackOffice\Salary\TcSupervisorsAndBackOfficeSalaryTable.cs" />
+    <Compile Include="UI\SupervisorsAndBackOffice\Salary\TeSupervisorsAndBackOfficeSalaryFilter.cs" />
+    <Compile Include="UI\SupervisorsAndBackOffice\Settings\TcSupervisorsAndBackOfficeSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SupervisorsAndBackOffice\Settings\TcSupervisorsAndBackOfficeSettingsForm.Designer.cs">
+      <DependentUpon>TcSupervisorsAndBackOfficeSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SupervisorsAndBackOffice\TcSupervisorsAndBackOfficeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SupervisorsAndBackOffice\TcSupervisorsAndBackOfficeForm.Designer.cs">
+      <DependentUpon>TcSupervisorsAndBackOfficeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PremierSales\Analyze\TcPremierSalesAnalyzedRow.cs" />
+    <Compile Include="UI\PremierSales\Analyze\TcPremierSalesAnalyzeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PremierSales\Analyze\TcPremierSalesAnalyzeForm.Designer.cs">
+      <DependentUpon>TcPremierSalesAnalyzeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PremierSales\Analyze\TcPremierSalesAnalyzer.cs" />
+    <Compile Include="UI\PremierSales\Generate\TcPremierSalesPayMasterGenerateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PremierSales\Generate\TcPremierSalesPayMasterGenerateForm.Designer.cs">
+      <DependentUpon>TcPremierSalesPayMasterGenerateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PremierSales\Generate\TcPremierSalesSalarySlipsCreator.cs" />
+    <Compile Include="UI\PremierSales\MasterData\TcPremierSalesMasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PremierSales\MasterData\TcPremierSalesMasterForm.Designer.cs">
+      <DependentUpon>TcPremierSalesMasterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PremierSales\MasterData\TcPremierSalesMasterLoader.cs" />
+    <Compile Include="UI\PremierSales\MasterData\TcPremierSalesMasterRow.cs" />
+    <Compile Include="UI\PremierSales\MasterData\TcPremierSalesMasterTable.cs" />
+    <Compile Include="UI\PremierSales\MasterData\TePremierSalesMasterFilter.cs" />
+    <Compile Include="UI\PremierSales\Salary\TcPremierSalesSalaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PremierSales\Salary\TcPremierSalesSalaryForm.Designer.cs">
+      <DependentUpon>TcPremierSalesSalaryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PremierSales\Salary\TcPremierSalesSalaryLoader.cs" />
+    <Compile Include="UI\PremierSales\Salary\TcPremierSalesSalaryRow.cs" />
+    <Compile Include="UI\PremierSales\Salary\TcPremierSalesSalaryTable.cs" />
+    <Compile Include="UI\PremierSales\Salary\TePremierSalesSalaryFilter.cs" />
+    <Compile Include="UI\PremierSales\Settings\TcPremierSalesSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PremierSales\Settings\TcPremierSalesSettingsForm.Designer.cs">
+      <DependentUpon>TcPremierSalesSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PremierSales\TcPremierSalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PremierSales\TcPremierSalesForm.Designer.cs">
+      <DependentUpon>TcPremierSalesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CustomerCare\Analyze\TcCustomerCareAnalyzeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CustomerCare\Analyze\TcCustomerCareAnalyzeForm.Designer.cs">
+      <DependentUpon>TcCustomerCareAnalyzeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CustomerCare\Analyze\TcCustomerCareAnalyzer.cs" />
+    <Compile Include="UI\CustomerCare\Analyze\TcCustomerCareAnalyzedRow.cs" />
+    <Compile Include="UI\CustomerCare\Generate\TcCustomerCareSalarySlipsCreator.cs" />
+    <Compile Include="UI\CustomerCare\Salary\TcCustomerCareSalaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CustomerCare\Salary\TcCustomerCareSalaryForm.Designer.cs">
+      <DependentUpon>TcCustomerCareSalaryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CustomerCare\Salary\TcCustomerCareSalaryLoader.cs" />
+    <Compile Include="UI\CustomerCare\Salary\TcCustomerCareSalaryRow.cs" />
+    <Compile Include="UI\CustomerCare\Salary\TcCustomerCareSalaryTable.cs" />
+    <Compile Include="UI\CustomerCare\Salary\TeCustomerCareSalaryFilter.cs" />
+    <Compile Include="UI\CustomerCare\MasterData\TcCustomerCareMasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CustomerCare\MasterData\TcCustomerCareMasterForm.Designer.cs">
+      <DependentUpon>TcCustomerCareMasterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CustomerCare\MasterData\TcCustomerCareMasterLoader.cs" />
+    <Compile Include="UI\CustomerCare\MasterData\TcCustomerCareMasterRow.cs" />
+    <Compile Include="UI\CustomerCare\MasterData\TcCustomerCareMasterTable.cs" />
+    <Compile Include="UI\CustomerCare\MasterData\TeCustomerCareMasterFilter.cs" />
+    <Compile Include="UI\Common\PayMaster\TcMandatoryCondition.cs" />
+    <Compile Include="UI\Common\PayMaster\TcPayMasterFileGenereator.cs" />
+    <Compile Include="UI\CustomerCare\Generate\TcCustomerCarePayMasterGenerateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CustomerCare\Generate\TcCustomerCarePayMasterGenerateForm.Designer.cs">
+      <DependentUpon>TcCustomerCarePayMasterGenerateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Common\PayMaster\TcPayMasterOriginData.cs" />
+    <Compile Include="UI\Common\PayMaster\TcPayMasterRow.cs" />
+    <Compile Include="UI\CustomerCare\Settings\TcCustomerCareSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CustomerCare\Settings\TcCustomerCareSettingsForm.Designer.cs">
+      <DependentUpon>TcCustomerCareSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CustomerCare\TcCustomerCareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CustomerCare\TcCustomerCareForm.Designer.cs">
+      <DependentUpon>TcCustomerCareForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Tools\Compare\TcPayMasterComparedRow.cs" />
+    <Compile Include="UI\Tools\Compare\TePayMasterCompareFilter.cs" />
+    <Compile Include="UI\Tools\Compare\TcPayMasterCompareForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Tools\Compare\TcPayMasterCompareForm.Designer.cs">
+      <DependentUpon>TcPayMasterCompareForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Tools\Decode\TcPayMasterFileDecorder.cs" />
+    <Compile Include="UI\CommissionAgents\MasterData\TcCommissionAgentsMasterRow.cs" />
+    <Compile Include="UI\CommissionAgents\MasterData\TcCommissionAgentsMasterDataLoader.cs" />
+    <Compile Include="UI\CommissionAgents\MasterData\TcCommissionAgentsMasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CommissionAgents\MasterData\TcCommissionAgentsMasterForm.Designer.cs">
+      <DependentUpon>TcCommissionAgentsMasterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CommissionAgents\Generate\TcCommissionAgentsPayMasterGenerateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CommissionAgents\Generate\TcCommissionAgentsPayMasterGenerateForm.Designer.cs">
+      <DependentUpon>TcCommissionAgentsPayMasterGenerateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CommissionAgents\Commissions\TcCommissionsLoader.cs" />
+    <Compile Include="UI\CommissionAgents\Commissions\TcCommissionsRow.cs" />
+    <Compile Include="UI\CommissionAgents\Commissions\TcCommissionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CommissionAgents\Commissions\TcCommissionsForm.Designer.cs">
+      <DependentUpon>TcCommissionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CommissionAgents\CommissionsHeld\TcCommissionsHeldLoader.cs" />
+    <Compile Include="UI\CommissionAgents\CommissionsHeld\TcCommissionsHeldRow.cs" />
+    <Compile Include="UI\CommissionAgents\CommissionsHeld\TcCommissionsHeldForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CommissionAgents\CommissionsHeld\TcCommissionsHeldForm.Designer.cs">
+      <DependentUpon>TcCommissionsHeldForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Tools\Decode\TcPayMasterDecodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Tools\Decode\TcPayMasterDecodeForm.Designer.cs">
+      <DependentUpon>TcPayMasterDecodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Tools\TcToolsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Tools\TcToolsForm.Designer.cs">
+      <DependentUpon>TcToolsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TcControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TcControlForm.Designer.cs">
+      <DependentUpon>TcControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TcMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TcMainForm.Designer.cs">
+      <DependentUpon>TcMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\TcBankAccountNumberValidator.cs" />
+    <Compile Include="Validators\TcBankAndBranchValidator.cs" />
+    <Compile Include="Validators\TcEpfEtfNumberValidator.cs" />
+    <Compile Include="Validators\TcEpfMemberStatusValidator.cs" />
+    <Compile Include="Validators\TcNICNumberValidator.cs" />
+    <Compile Include="Validators\TcOCGradeValidator.cs" />
+    <Compile Include="Validators\TcPaymasterCharacterValidator.cs" />
+    <Compile Include="General\TcValidator.cs" />
+    <Compile Include="Validators\TcZoneCodeValidator.cs" />
+    <EmbeddedResource Include="Controls\TcForm.resx">
+      <DependentUpon>TcForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TcNavigationButton.resx">
+      <DependentUpon>TcNavigationButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TcTabControlForm.resx">
+      <DependentUpon>TcTabControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\Auditors\Analyze\TcAuditorsAnalyzeForm.resx">
+      <DependentUpon>TcAuditorsAnalyzeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Auditors\Generate\TcAuditorsPayMasterGenerateForm.resx">
+      <DependentUpon>TcAuditorsPayMasterGenerateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Auditors\MasterData\TcAuditorsMasterForm.resx">
+      <DependentUpon>TcAuditorsMasterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Auditors\Salary\TcAuditorsSalaryForm.resx">
+      <DependentUpon>TcAuditorsSalaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Auditors\Settings\TcAuditorsSettingsForm.resx">
+      <DependentUpon>TcAuditorsSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Auditors\TcAuditorsForm.resx">
+      <DependentUpon>TcAuditorsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CommissionAgents\Analyze\TcCommissionAgentsAnalyzeForm.resx">
+      <DependentUpon>TcCommissionAgentsAnalyzeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CommissionAgents\Settings\TcCommissionAgentsSettingsForm.resx">
+      <DependentUpon>TcCommissionAgentsSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CommissionAgents\TcCommissionAgentsForm.resx">
+      <DependentUpon>TcCommissionAgentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Common\BanksAndBranches\TcBanksAndBranchesForm.resx">
+      <DependentUpon>TcBanksAndBranchesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CallCenterInbound\Analyze\TcCallCenterInboundAnalyzeForm.resx">
+      <DependentUpon>TcCallCenterInboundAnalyzeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CallCenterInbound\Generate\TcCallCenterInboundPayMasterGenerateForm.resx">
+      <DependentUpon>TcCallCenterInboundPayMasterGenerateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CallCenterInbound\MasterData\TcCallCenterInboundMasterForm.resx">
+      <DependentUpon>TcCallCenterInboundMasterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CallCenterInbound\Salary\TcCallCenterInboundSalaryForm.resx">
+      <DependentUpon>TcCallCenterInboundSalaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CallCenterInbound\Settings\TcCallCenterInboundSettingsForm.resx">
+      <DependentUpon>TcCallCenterInboundSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CallCenterInbound\TcCallCenterInboundForm.resx">
+      <DependentUpon>TcCallCenterInboundForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CallCenterOutbound\Analyze\TcCallCenterOutboundAnalyzeForm.resx">
+      <DependentUpon>TcCallCenterOutboundAnalyzeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CallCenterOutbound\Generate\TcCallCenterOutboundPayMasterGenerateForm.resx">
+      <DependentUpon>TcCallCenterOutboundPayMasterGenerateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CallCenterOutbound\MasterData\TcCallCenterOutboundMasterForm.resx">
+      <DependentUpon>TcCallCenterOutboundMasterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CallCenterOutbound\Salary\TcCallCenterOutboundSalaryForm.resx">
+      <DependentUpon>TcCallCenterOutboundSalaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CallCenterOutbound\Settings\TcCallCenterOutboundSettingsForm.resx">
+      <DependentUpon>TcCallCenterOutboundSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CallCenterOutbound\TcCallCenterOutboundForm.resx">
+      <DependentUpon>TcCallCenterOutboundForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Common\TcAboutBox.resx">
+      <DependentUpon>TcAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CareTakers\Analyze\TcCareTakersAnalyzeForm.resx">
+      <DependentUpon>TcCareTakersAnalyzeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CareTakers\Payments\TcCareTakersPaymentsForm.resx">
+      <DependentUpon>TcCareTakersPaymentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CareTakers\Generate\TcCareTakersPayMasterGenerateForm.resx">
+      <DependentUpon>TcCareTakersPayMasterGenerateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CareTakers\MasterData\TcCareTakersMasterForm.resx">
+      <DependentUpon>TcCareTakersMasterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CareTakers\Settings\TcCareTakersSettingsForm.resx">
+      <DependentUpon>TcCareTakersSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CareTakers\TcCareTakersForm.resx">
+      <DependentUpon>TcCareTakersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuration\ConfigFile\TcConfigurationFileForm.resx">
+      <DependentUpon>TcConfigurationFileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuration\Settings\TcConfigurationSettingsForm.resx">
+      <DependentUpon>TcConfigurationSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuration\TcConfigurationForm.resx">
+      <DependentUpon>TcConfigurationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OfficeStaff\Analyze\TcOfficeStaffAnalyzeForm.resx">
+      <DependentUpon>TcOfficeStaffAnalyzeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OfficeStaff\Generate\TcOfficeStaffPayMasterGenerateForm.resx">
+      <DependentUpon>TcOfficeStaffPayMasterGenerateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OfficeStaff\MasterData\TcOfficeStaffMasterForm.resx">
+      <DependentUpon>TcOfficeStaffMasterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OfficeStaff\Salary\TcOfficeStaffSalaryForm.resx">
+      <DependentUpon>TcOfficeStaffSalaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OfficeStaff\Settings\TcOfficeStaffSettingsForm.resx">
+      <DependentUpon>TcOfficeStaffSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OfficeStaff\TcOfficeStaffForm.resx">
+      <DependentUpon>TcOfficeStaffForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Epf\Epf\TcEpfForm.resx">
+      <DependentUpon>TcEpfForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Epf\Settings\TcEpfSettingsForm.resx">
+      <DependentUpon>TcEpfSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Epf\TcEpfControlForm.resx">
+      <DependentUpon>TcEpfControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Etf\Etf\TcEtfForm.resx">
+      <DependentUpon>TcEtfForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Etf\Settings\TcEtfSettingsForm.resx">
+      <DependentUpon>TcEtfSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Etf\TcEtfControlForm.resx">
+      <DependentUpon>TcEtfControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SupervisorsAndBackOffice\Analyze\TcSupervisorsAndBackOfficeAnalyzeForm.resx">
+      <DependentUpon>TcSupervisorsAndBackOfficeAnalyzeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SupervisorsAndBackOffice\Generate\TcSupervisorsAndBackOfficePayMasterGenerateForm.resx">
+      <DependentUpon>TcSupervisorsAndBackOfficePayMasterGenerateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SupervisorsAndBackOffice\MasterData\TcSupervisorsAndBackOfficeMasterForm.resx">
+      <DependentUpon>TcSupervisorsAndBackOfficeMasterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SupervisorsAndBackOffice\Salary\TcSupervisorsAndBackOfficeSalaryForm.resx">
+      <DependentUpon>TcSupervisorsAndBackOfficeSalaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SupervisorsAndBackOffice\Settings\TcSupervisorsAndBackOfficeSettingsForm.resx">
+      <DependentUpon>TcSupervisorsAndBackOfficeSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SupervisorsAndBackOffice\TcSupervisorsAndBackOfficeForm.resx">
+      <DependentUpon>TcSupervisorsAndBackOfficeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PremierSales\Analyze\TcPremierSalesAnalyzeForm.resx">
+      <DependentUpon>TcPremierSalesAnalyzeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PremierSales\Generate\TcPremierSalesPayMasterGenerateForm.resx">
+      <DependentUpon>TcPremierSalesPayMasterGenerateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PremierSales\MasterData\TcPremierSalesMasterForm.resx">
+      <DependentUpon>TcPremierSalesMasterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PremierSales\Salary\TcPremierSalesSalaryForm.resx">
+      <DependentUpon>TcPremierSalesSalaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PremierSales\Settings\TcPremierSalesSettingsForm.resx">
+      <DependentUpon>TcPremierSalesSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PremierSales\TcPremierSalesForm.resx">
+      <DependentUpon>TcPremierSalesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CustomerCare\Analyze\TcCustomerCareAnalyzeForm.resx">
+      <DependentUpon>TcCustomerCareAnalyzeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CustomerCare\Salary\TcCustomerCareSalaryForm.resx">
+      <DependentUpon>TcCustomerCareSalaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CustomerCare\MasterData\TcCustomerCareMasterForm.resx">
+      <DependentUpon>TcCustomerCareMasterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CustomerCare\Generate\TcCustomerCarePayMasterGenerateForm.resx">
+      <DependentUpon>TcCustomerCarePayMasterGenerateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CustomerCare\Settings\TcCustomerCareSettingsForm.resx">
+      <DependentUpon>TcCustomerCareSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CustomerCare\TcCustomerCareForm.resx">
+      <DependentUpon>TcCustomerCareForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Tools\Compare\TcPayMasterCompareForm.resx">
+      <DependentUpon>TcPayMasterCompareForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CommissionAgents\MasterData\TcCommissionAgentsMasterForm.resx">
+      <DependentUpon>TcCommissionAgentsMasterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CommissionAgents\Generate\TcCommissionAgentsPayMasterGenerateForm.resx">
+      <DependentUpon>TcCommissionAgentsPayMasterGenerateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CommissionAgents\Commissions\TcCommissionsForm.resx">
+      <DependentUpon>TcCommissionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CommissionAgents\CommissionsHeld\TcCommissionsHeldForm.resx">
+      <DependentUpon>TcCommissionsHeldForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Tools\Decode\TcPayMasterDecodeForm.resx">
+      <DependentUpon>TcPayMasterDecodeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Tools\TcToolsForm.resx">
+      <DependentUpon>TcToolsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TcControlForm.resx">
+      <DependentUpon>TcControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TcMainForm.resx">
+      <DependentUpon>TcMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Auditors.png" />
+    <Content Include="Resources\Configuration.png" />
+    <Content Include="Resources\EPF.png" />
+    <Content Include="Resources\ETF.png" />
+    <Content Include="Resources\OfficeStaff.png" />
+    <Content Include="Resources\TickAmber.png" />
+    <EmbeddedResource Include="Resources\CallCenterInbound.png" />
+    <EmbeddedResource Include="Resources\CallCenterOutbound.png" />
+    <EmbeddedResource Include="Resources\CommissionAgents.png" />
+    <EmbeddedResource Include="Resources\Cross.png" />
+    <EmbeddedResource Include="Resources\CrossAmber.png" />
+    <EmbeddedResource Include="Resources\CustomerCare.png" />
+    <EmbeddedResource Include="Resources\DupalLogo.ico" />
+    <EmbeddedResource Include="Resources\DuPalLogo.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="Resources\CareTakers.png" />
+    <Content Include="Resources\Ionic.Zip.dll" />
+    <EmbeddedResource Include="Resources\PayMaster.png" />
+    <EmbeddedResource Include="Resources\PaySlips.png" />
+    <Content Include="Resources\PdfSharp_1.31\MigraDoc.DocumentObjectModel-WPF.dll" />
+    <Content Include="Resources\PdfSharp_1.31\MigraDoc.Rendering-WPF.dll" />
+    <Content Include="Resources\PdfSharp_1.31\MigraDoc.RtfRendering-WPF.dll" />
+    <Content Include="Resources\PdfSharp_1.31\PdfSharp-WPF.dll" />
+    <EmbeddedResource Include="Resources\PremierSales.png" />
+    <EmbeddedResource Include="Resources\SupervisorAndBackOffice.png" />
+    <EmbeddedResource Include="Resources\Tick.png" />
+    <EmbeddedResource Include="Resources\Tools.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

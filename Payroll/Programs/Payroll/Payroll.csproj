@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{45BCEDA8-3F54-49D3-AD4B-F48AD9032EF8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Payroll</RootNamespace>
+    <AssemblyName>Payroll</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Payroll.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.DocumentObjectModel-WPF, Version=1.31.3066.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\PdfSharp_1.31\MigraDoc.DocumentObjectModel-WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.Rendering-WPF, Version=1.31.3066.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\PdfSharp_1.31\MigraDoc.Rendering-WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.RtfRendering-WPF, Version=1.31.3066.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\PdfSharp_1.31\MigraDoc.RtfRendering-WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp-WPF, Version=1.31.1789.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\PdfSharp_1.31\PdfSharp-WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Library\Csv\TcCsvDataField.cs" />
+    <Compile Include="Library\Csv\TcCsvDataRow.cs" />
+    <Compile Include="Library\Csv\TcCsvFile.cs" />
+    <Compile Include="Library\Csv\TcCsvValueDecorder.cs" />
+    <Compile Include="Library\Csv\TcParsedCsvFileInformation.cs" />
+    <Compile Include="Library\Date\TcDateDiff.cs" />
+    <Compile Include="Library\Date\TcYearMonth.cs" />
+    <Compile Include="Library\Epf\TcEpfCsvFileReader.cs" />
+    <Compile Include="Library\Epf\TcEpfCsvFileWriter.cs" />
+    <Compile Include="Library\Epf\TcEpfMemberData.cs" />
+    <Compile Include="Library\Epf\TcEpfFile.cs" />
+    <Compile Include="Library\Epf\TcEpfFileReader.cs" />
+    <Compile Include="Library\Epf\TcEpfFileValidator.cs" />
+    <Compile Include="Library\Epf\TcEpfFileWriter.cs" />
+    <Compile Include="Library\Epf\TcEpfEmployerData.cs" />
+    <Compile Include="Library\Epf\TcEpfRow.cs" />
+    <Compile Include="Library\Epf\TcParsedEpfCsvFileInformation.cs" />
+    <Compile Include="Library\Epf\TeEpfError.cs" />
+    <Compile Include="Library\Etf\TcEtfCsvFileReader.cs" />
+    <Compile Include="Library\Etf\TcEtfCsvFileWriter.cs" />
+    <Compile Include="Library\Etf\TcEtfMemberData.cs" />
+    <Compile Include="Library\Etf\TcEtfEmployerData.cs" />
+    <Compile Include="Library\Etf\TcEtfDetailRow.cs" />
+    <Compile Include="Library\Etf\TcEtfFile.cs" />
+    <Compile Include="Library\Etf\TcEtfFileReader.cs" />
+    <Compile Include="Library\Etf\TcEtfFileValidator.cs" />
+    <Compile Include="Library\Etf\TcEtfFileWriter.cs" />
+    <Compile Include="Library\Etf\TcEtfHeaderRow.cs" />
+    <Compile Include="Library\Etf\TcParsedEtfCsvFileInformation.cs" />
+    <Compile Include="Library\Etf\TeEtfError.cs" />
+    <Compile Include="Library\Excel\TcExcelValueDecorder.cs" />
+    <Compile Include="Library\Excel\TcExcel.cs" />
+    <Compile Include="Library\Excel\TcExcelCell.cs" />
+    <Compile Include="Library\Excel\TcExcelReader.cs" />
+    <Compile Include="Library\Excel\TcExcelTable.cs" />
+    <Compile Include="Library\Excel\TcExcelTableColumn.cs" />
+    <Compile Include="Library\Excel\TcExcelTableRow.cs" />
+    <Compile Include="Library\General\TcBackgroundWorker.cs" />
+    <Compile Include="Library\General\TcDecimal.cs" />
+    <Compile Include="Library\General\TcDirectory.cs" />
+    <Compile Include="Library\General\TcEnum.cs" />
+    <Compile Include="Library\General\TcFile.cs" />
+    <Compile Include="Library\General\TcFormatter.cs" />
+    <Compile Include="Library\General\TcNIC.cs" />
+    <Compile Include="Library\General\TcOperationState.cs" />
+    <Compile Include="Library\General\TcPaths.cs" />
+    <Compile Include="Library\General\TcPropertyNames.cs" />
+    <Compile Include="Library\General\TcReflection.cs" />
+    <Compile Include="Library\General\TcRegistryEntry.cs" />
+    <Compile Include="Library\General\TcSettings.cs" />
+    <Compile Include="Library\General\TcString.cs" />
+    <Compile Include="Library\General\TcTheme.cs" />
+    <Compile Include="Library\General\TcValidationResults.cs" />
+    <Compile Include="Library\General\TcValidator.cs" />
+    <Compile Include="Library\General\TcZipFileExporter.cs" />
+    <Compile Include="Library\MetaData\TcSettingsMetaData.cs" />
+    <Compile Include="Library\MetaData\TcBanksAndBranchesMetaData.cs" />
+    <Compile Include="Library\MetaData\TcMetaDataCategory.cs" />
+    <Compile Include="Library\MetaData\TcEmployerMetaDataRow.cs" />
+    <Compile Include="Library\MetaData\TaMetaDataBase.cs" />
+    <Compile Include="Library\MetaData\TcMetaData.cs" />
+    <Compile Include="Library\MetaData\TcEmployerMetaData.cs" />
+    <Compile Include="Library\MetaData\TcMasterMetaData.cs" />
+    <Compile Include="Library\MetaData\TcMasterMetaDataRow.cs" />
+    <Compile Include="Library\MetaData\TcSalaryMetaData.cs" />
+    <Compile Include="Library\MetaData\TcSalaryMetaDataRow.cs" />
+    <Compile Include="Library\MetaData\TcMetaDataType.cs" />
+    <Compile Include="Library\MetaData\TcPropertyNameRow.cs" />
+    <Compile Include="Library\Model\TcPayrollFolderStructure.cs" />
+    <Compile Include="Library\Model\TcPayrollFolder.cs" />
+    <Compile Include="Library\Model\TcTuple.cs" />
+    <Compile Include="Library\Payments\ComBank\TcComBankCreditRecord.cs" />
+    <Compile Include="Library\Payments\ComBank\TcComBankDebitRecord.cs" />
+    <Compile Include="Library\Payments\ComBank\TcComBankPaymentRecord.cs" />
+    <Compile Include="Library\Payments\Hnb\TcHnbPaymentsGenerator.cs" />
+    <Compile Include="Library\Payments\Hnb\TcHnbEmployerData.cs" />
+    <Compile Include="Library\Payments\Hnb\TcHnbDetailRecord.cs" />
+    <Compile Include="Library\Payments\Hnb\TcHnbControlRecord.cs" />
+    <Compile Include="Library\Payments\Hnb\TcHnbMemberData.cs" />
+    <Compile Include="Library\Payments\TcBankPaymentsGenerator.cs" />
+    <Compile Include="Library\Payments\TcEmployerData.cs" />
+    <Compile Include="Library\Payments\TcMandatoryCondition.cs" />
+    <Compile Include="Library\Payments\ComBank\TcComBankMemberData.cs" />
+    <Compile Include="Library\Payments\ComBank\TcComBankPaymentsGenerator.cs" />
+    <Compile Include="Library\Payments\ComBank\TcComBankEmployerData.cs" />
+    <Compile Include="Library\Payments\TcPaymentsValidator.cs" />
+    <Compile Include="Library\Payments\TcBankMemberData.cs" />
+    <Compile Include="Library\Payments\TiMemberData.cs" />
+    <Compile Include="Library\Validators\TcBankAccountNumberValidator.cs" />
+    <Compile Include="Library\Validators\TcBankAndBranchValidator.cs" />
+    <Compile Include="Library\Validators\TcEpfEtfNumberValidator.cs" />
+    <Compile Include="Library\Validators\TcEpfMemberStatusValidator.cs" />
+    <Compile Include="Library\Validators\TcNICNumberValidator.cs" />
+    <Compile Include="Library\Validators\TcOCGradeValidator.cs" />
+    <Compile Include="Library\Validators\TcPaymasterCharacterValidator.cs" />
+    <Compile Include="Library\Validators\TcZoneCodeValidator.cs" />
+    <Compile Include="Library\Zip\TcZip.cs" />
+    <Compile Include="UI\Business\Analyze\TcBusinessAnalyzedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Business\Analyze\TcBusinessAnalyzedForm.Designer.cs">
+      <DependentUpon>TcBusinessAnalyzedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Business\Analyze\TcBusinessAnalyzedRow.cs" />
+    <Compile Include="UI\Business\Analyze\TcBusinessAnalyzer.cs" />
+    <Compile Include="UI\Business\Analyze\TeBusinessAnalyzeFilter.cs" />
+    <Compile Include="UI\Business\Generate\TcBusinessConditionsChecker.cs" />
+    <Compile Include="UI\Business\Generate\TcBusinessPaymentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Business\Generate\TcBusinessPaymentsForm.Designer.cs">
+      <DependentUpon>TcBusinessPaymentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Business\Generate\TcBusinessSalarySlipsCreator.cs" />
+    <Compile Include="UI\Business\Generate\TcSalarySlipsCreator.cs" />
+    <Compile Include="UI\Business\MasterData\TcBusinessMasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Business\MasterData\TcBusinessMasterForm.Designer.cs">
+      <DependentUpon>TcBusinessMasterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Business\MasterData\TcBusinessMasterRow.cs" />
+    <Compile Include="UI\Business\MasterData\TcBusinessMasterTable.cs" />
+    <Compile Include="UI\Business\MasterData\TcBusinessMasterEngine.cs" />
+    <Compile Include="UI\Business\MasterData\TeBusinessMasterFilter.cs" />
+    <Compile Include="UI\Business\Salary\TcBusinessSalaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Business\Salary\TcBusinessSalaryForm.Designer.cs">
+      <DependentUpon>TcBusinessSalaryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Business\Salary\TcBusinessSalaryTable.cs" />
+    <Compile Include="UI\Business\Salary\TcBusinessSalaryRow.cs" />
+    <Compile Include="UI\Business\Salary\TcBusinessSalaryEngine.cs" />
+    <Compile Include="UI\Business\Salary\TeBusinessSalaryFilter.cs" />
+    <Compile Include="UI\Business\Settings\TcBusinessSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Business\Settings\TcBusinessSettingsForm.Designer.cs">
+      <DependentUpon>TcBusinessSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Business\TcBusinessForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Business\TcBusinessForm.Designer.cs">
+      <DependentUpon>TcBusinessForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Common\BanksAndBranches\TcBanksAndBranchesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Common\BanksAndBranches\TcBanksAndBranchesForm.Designer.cs">
+      <DependentUpon>TcBanksAndBranchesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Common\BanksAndBranches\TcBanksAndBranchesTable.cs" />
+    <Compile Include="UI\Common\BanksAndBranches\TcBanksAndBranchesRow.cs" />
+    <Compile Include="UI\Common\BanksAndBranches\TcBanksAndBranchesEngine.cs" />
+    <Compile Include="UI\Common\BanksAndBranches\TeBanksAndBranchesFilter.cs" />
+    <Compile Include="Library\General\TcGenerateFormHelper.cs" />
+    <Compile Include="Library\General\TcOutputFilesGenerator.cs" />
+    <Compile Include="UI\Common\TcAboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Common\TcAboutBox.designer.cs">
+      <DependentUpon>TcAboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Common\TcBaseRow.cs" />
+    <Compile Include="UI\Configuration\Settings\TcConfigurationSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuration\Settings\TcConfigurationSettingsForm.Designer.cs">
+      <DependentUpon>TcConfigurationSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Configuration\TcConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Configuration\TcConfigurationForm.Designer.cs">
+      <DependentUpon>TcConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\TcListSearchHelper.cs" />
+    <Compile Include="UI\Controls\TcBindingList.cs" />
+    <Compile Include="Library\General\TcLog.cs" />
+    <Compile Include="Library\General\TcMessageBox.cs" />
+    <Compile Include="UI\Controls\TcPropertyComparer.cs" />
+    <Compile Include="TcMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcMainForm.Designer.cs">
+      <DependentUpon>TcMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Controls\TcForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\TcForm.Designer.cs">
+      <DependentUpon>TcForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\TcHeaderNamesChecker.cs" />
+    <Compile Include="UI\Controls\TcNavigationButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\TcNavigationButton.designer.cs">
+      <DependentUpon>TcNavigationButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\TcSearchHelper.cs" />
+    <Compile Include="UI\Controls\TcTabControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\TcTabControlForm.Designer.cs">
+      <DependentUpon>TcTabControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\TiSearchable.cs" />
+    <Compile Include="UI\Epf\Epf\TcEpfForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Epf\Epf\TcEpfForm.Designer.cs">
+      <DependentUpon>TcEpfForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Epf\Settings\TcEpfSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Epf\Settings\TcEpfSettingsForm.Designer.cs">
+      <DependentUpon>TcEpfSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Epf\TcEpfControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Epf\TcEpfControlForm.Designer.cs">
+      <DependentUpon>TcEpfControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Etf\Etf\TcEtfForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Etf\Etf\TcEtfForm.Designer.cs">
+      <DependentUpon>TcEtfForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Etf\Settings\TcEtfSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Etf\Settings\TcEtfSettingsForm.Designer.cs">
+      <DependentUpon>TcEtfSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Etf\TcEtfControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Etf\TcEtfControlForm.Designer.cs">
+      <DependentUpon>TcEtfControlForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TcMainForm.resx">
+      <DependentUpon>TcMainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Business\Analyze\TcBusinessAnalyzedForm.resx">
+      <DependentUpon>TcBusinessAnalyzedForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Business\Generate\TcBusinessPaymentsForm.resx">
+      <DependentUpon>TcBusinessPaymentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Business\MasterData\TcBusinessMasterForm.resx">
+      <DependentUpon>TcBusinessMasterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Business\Salary\TcBusinessSalaryForm.resx">
+      <DependentUpon>TcBusinessSalaryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Business\Settings\TcBusinessSettingsForm.resx">
+      <DependentUpon>TcBusinessSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Business\TcBusinessForm.resx">
+      <DependentUpon>TcBusinessForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Common\BanksAndBranches\TcBanksAndBranchesForm.resx">
+      <DependentUpon>TcBanksAndBranchesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Common\TcAboutBox.resx">
+      <DependentUpon>TcAboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuration\Settings\TcConfigurationSettingsForm.resx">
+      <DependentUpon>TcConfigurationSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Configuration\TcConfigurationForm.resx">
+      <DependentUpon>TcConfigurationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\TcForm.resx">
+      <DependentUpon>TcForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\TcNavigationButton.resx">
+      <DependentUpon>TcNavigationButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\TcTabControlForm.resx">
+      <DependentUpon>TcTabControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Epf\Epf\TcEpfForm.resx">
+      <DependentUpon>TcEpfForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Epf\Settings\TcEpfSettingsForm.resx">
+      <DependentUpon>TcEpfSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Epf\TcEpfControlForm.resx">
+      <DependentUpon>TcEpfControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Etf\Etf\TcEtfForm.resx">
+      <DependentUpon>TcEtfForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Etf\Settings\TcEtfSettingsForm.resx">
+      <DependentUpon>TcEtfSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Etf\TcEtfControlForm.resx">
+      <DependentUpon>TcEtfControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Business.png" />
+    <Content Include="Resources\Configuration.png" />
+    <Content Include="Resources\Cross.png" />
+    <Content Include="Resources\CrossAmber.png" />
+    <Content Include="Resources\DupalLogo.ico" />
+    <Content Include="Resources\DuPalLogo.jpg" />
+    <Content Include="Resources\EPF.png" />
+    <Content Include="Resources\ETF.png" />
+    <Content Include="Resources\Ionic.Zip.dll" />
+    <Content Include="Resources\Payroll.ico" />
+    <Content Include="Resources\Payroll.png" />
+    <Content Include="Resources\PdfSharp_1.31\MigraDoc.DocumentObjectModel-WPF.dll" />
+    <Content Include="Resources\PdfSharp_1.31\MigraDoc.Rendering-WPF.dll" />
+    <Content Include="Resources\PdfSharp_1.31\MigraDoc.RtfRendering-WPF.dll" />
+    <Content Include="Resources\PdfSharp_1.31\PdfSharp-WPF.dll" />
+    <Content Include="Resources\Tick.png" />
+    <Content Include="Resources\TickAmber.png" />
+    <Content Include="Resources\Tools.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

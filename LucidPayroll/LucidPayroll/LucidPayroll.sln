@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LucidPayroll", "LucidPayroll\LucidPayroll.csproj", "{C529D071-8E8B-4BE8-9BBB-8175D39E49AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LucidLibrary", "LucidLibrary\LucidLibrary.csproj", "{8FF004FE-6BA5-407E-A9D9-EDC14FBC4298}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LucidPayrollTester", "LucidPayrollTester\LucidPayrollTester.csproj", "{5B8FF57C-DF77-416E-B268-4B7AEA974E93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C529D071-8E8B-4BE8-9BBB-8175D39E49AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C529D071-8E8B-4BE8-9BBB-8175D39E49AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C529D071-8E8B-4BE8-9BBB-8175D39E49AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C529D071-8E8B-4BE8-9BBB-8175D39E49AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FF004FE-6BA5-407E-A9D9-EDC14FBC4298}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FF004FE-6BA5-407E-A9D9-EDC14FBC4298}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FF004FE-6BA5-407E-A9D9-EDC14FBC4298}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FF004FE-6BA5-407E-A9D9-EDC14FBC4298}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B8FF57C-DF77-416E-B268-4B7AEA974E93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B8FF57C-DF77-416E-B268-4B7AEA974E93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B8FF57C-DF77-416E-B268-4B7AEA974E93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B8FF57C-DF77-416E-B268-4B7AEA974E93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

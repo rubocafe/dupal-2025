@@ -1,0 +1,24 @@
+http://technet.microsoft.com/en-us/library/ms187993.aspx
+
+http://codeclimber.googlecode.com/svn/BlogPosts/Lucene.net/Basic-Concepts/Program.cs
+
+hg clone -r ocropus-0.7 https://code.google.com/p/ocropus
+cd ocropus/ocropy
+more PACKAGES 
+Now these are the packages necessary to install ocropus successfully on Linux. However their macports names are slightly different. I therefore install the following (since I already have py27-numpy, py27-scipy and firefox) :
+sudo port install py27-matplotlib +gtk2
+sudo port clean py27-matplotlib +gtk2
+sudo port install curl py27-tables imagemagick opencv py-beautifulsoup4 py27-pil py27-pygtk
+sudo port clean curl py27-tables imagemagick opencv py-beautifulsoup4 py27-pil py27-pygtk
+
+cd ocrolib
+Then complete this by:
+python setup.py download_models
+sudo python setup.py install
+Finally, to run the tests a change in the run-tests file needs to be made: this is because when the file gets executed it will not find the command files. To correct this open run-tests with an editor and add “./” in front of all the commands. It will then read:
+./ocropus-sauvola tests/testpage.png -o temp
+./ocropus-gpageseg 'temp/????.bin.png'
+./ocropus-rpred 'temp/????/??????.bin.png'
+./ocropus-hocr 'temp/????.bin.png' -o temp.html
+./ocropus-visualize-results temp
+./ocropus-gtedit html temp/????/??????.bin.png -o temp-correction.html
