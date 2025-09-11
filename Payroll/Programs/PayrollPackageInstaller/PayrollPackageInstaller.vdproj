@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_10C7A254039E4E5690AA18FA23A4ACC4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_4AB1ADA458C1C1F47486FF471F9238E8"
         "OwnerKey" = "8:_D8A423886A4E48D0844F838E25D7BB0F"
         "MsmSig" = "8:_UNDEFINED"
@@ -82,12 +88,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4AB1ADA458C1C1F47486FF471F9238E8"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_D8A423886A4E48D0844F838E25D7BB0F"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -115,6 +115,12 @@
         "OwnerKey" = "8:_9F4A8727059F9038992C6983ADDA145F"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_4AB1ADA458C1C1F47486FF471F9238E8"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -133,6 +139,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -149,6 +171,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -178,6 +216,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_10C7A254039E4E5690AA18FA23A4ACC4"
+            {
+            "SourcePath" = "8:..\\Payroll\\Resources\\Payroll.ico"
+            "TargetName" = "8:Payroll.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_BD3CB2247A7A48C585B63E693B3AB261"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4AB1ADA458C1C1F47486FF471F9238E8"
             {
             "AssemblyRegister" = "3:1"
@@ -388,26 +446,26 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:PayrollPackageInstaller"
+        "ProductName" = "8:Dupal Payroll (Blue)"
         "ProductCode" = "8:{45D76417-B3CE-40F0-99BF-DFCCEC4D4366}"
-        "PackageCode" = "8:{4402C555-A6A7-4A19-AF92-FC7489CA414A}"
-        "UpgradeCode" = "8:{B6703DA4-2A15-423E-95A0-D5C0007B8A42}"
+        "PackageCode" = "8:{54F23276-E102-4F2A-A588-E3FD4997BE77}"
+        "UpgradeCode" = "8:{1E3282CB-536A-4657-8547-A5C25DF0E67B}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
         "ProductVersion" = "8:1.0.0"
         "Manufacturer" = "8:Lucid Consulting"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:PayrollPackageInstaller"
+        "Title" = "8:Dupal Payroll (Blue)"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Lucid Consulting"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_10C7A254039E4E5690AA18FA23A4ACC4"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
