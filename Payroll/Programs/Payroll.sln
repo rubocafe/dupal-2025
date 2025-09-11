@@ -1,12 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36429.23 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payroll", "Payroll\Payroll.csproj", "{45BCEDA8-3F54-49D3-AD4B-F48AD9032EF8}"
-EndProject
-Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "PayrollSetup", "PayrollSetup\PayrollSetup.isproj", "{32DB37AB-2C7E-497C-A3F2-771F17085E24}"
-	ProjectSection(ProjectDependencies) = postProject
-		{45BCEDA8-3F54-49D3-AD4B-F48AD9032EF8} = {45BCEDA8-3F54-49D3-AD4B-F48AD9032EF8}
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,18 +27,6 @@ Global
 		{45BCEDA8-3F54-49D3-AD4B-F48AD9032EF8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{45BCEDA8-3F54-49D3-AD4B-F48AD9032EF8}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
 		{45BCEDA8-3F54-49D3-AD4B-F48AD9032EF8}.SingleImage|Any CPU.Build.0 = Release|Any CPU
-		{32DB37AB-2C7E-497C-A3F2-771F17085E24}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
-		{32DB37AB-2C7E-497C-A3F2-771F17085E24}.CD_ROM|Any CPU.Build.0 = CD_ROM
-		{32DB37AB-2C7E-497C-A3F2-771F17085E24}.Debug|Any CPU.ActiveCfg = DVD-5
-		{32DB37AB-2C7E-497C-A3F2-771F17085E24}.Debug|Any CPU.Build.0 = DVD-5
-		{32DB37AB-2C7E-497C-A3F2-771F17085E24}.DefaultBuild|Any CPU.ActiveCfg = DVD-5
-		{32DB37AB-2C7E-497C-A3F2-771F17085E24}.DefaultBuild|Any CPU.Build.0 = DVD-5
-		{32DB37AB-2C7E-497C-A3F2-771F17085E24}.DVD-5|Any CPU.ActiveCfg = DVD-5
-		{32DB37AB-2C7E-497C-A3F2-771F17085E24}.DVD-5|Any CPU.Build.0 = DVD-5
-		{32DB37AB-2C7E-497C-A3F2-771F17085E24}.Release|Any CPU.ActiveCfg = SingleImage
-		{32DB37AB-2C7E-497C-A3F2-771F17085E24}.Release|Any CPU.Build.0 = SingleImage
-		{32DB37AB-2C7E-497C-A3F2-771F17085E24}.SingleImage|Any CPU.ActiveCfg = SingleImage
-		{32DB37AB-2C7E-497C-A3F2-771F17085E24}.SingleImage|Any CPU.Build.0 = SingleImage
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
