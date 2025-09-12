@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36429.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DUPALPayroll", "DUPALPayroll\DUPALPayroll.csproj", "{B786A604-A6B8-44B9-9FF3-FE9259D11C63}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DUPALPayrollMSI", "DUPALPayrollMSI\DUPALPayrollMSI.vdproj", "{50D3307F-1E44-181A-BDEE-DDA336AE2A47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU
@@ -24,6 +26,11 @@ Global
 		{B786A604-A6B8-44B9-9FF3-FE9259D11C63}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B786A604-A6B8-44B9-9FF3-FE9259D11C63}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
 		{B786A604-A6B8-44B9-9FF3-FE9259D11C63}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{50D3307F-1E44-181A-BDEE-DDA336AE2A47}.CD_ROM|Any CPU.ActiveCfg = Release
+		{50D3307F-1E44-181A-BDEE-DDA336AE2A47}.Debug|Any CPU.ActiveCfg = Debug
+		{50D3307F-1E44-181A-BDEE-DDA336AE2A47}.DVD-5|Any CPU.ActiveCfg = Release
+		{50D3307F-1E44-181A-BDEE-DDA336AE2A47}.Release|Any CPU.ActiveCfg = Release
+		{50D3307F-1E44-181A-BDEE-DDA336AE2A47}.SingleImage|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
