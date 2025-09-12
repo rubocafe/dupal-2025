@@ -5,8 +5,6 @@ VisualStudioVersion = 17.14.36429.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Payroll", "Payroll\Payroll.csproj", "{45BCEDA8-3F54-49D3-AD4B-F48AD9032EF8}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PayrollPackageInstaller", "PayrollPackageInstaller\PayrollPackageInstaller.vdproj", "{C778C43A-81C0-BAB1-5776-229807703664}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU
@@ -29,14 +27,11 @@ Global
 		{45BCEDA8-3F54-49D3-AD4B-F48AD9032EF8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{45BCEDA8-3F54-49D3-AD4B-F48AD9032EF8}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
 		{45BCEDA8-3F54-49D3-AD4B-F48AD9032EF8}.SingleImage|Any CPU.Build.0 = Release|Any CPU
-		{C778C43A-81C0-BAB1-5776-229807703664}.CD_ROM|Any CPU.ActiveCfg = Release
-		{C778C43A-81C0-BAB1-5776-229807703664}.Debug|Any CPU.ActiveCfg = Debug
-		{C778C43A-81C0-BAB1-5776-229807703664}.DefaultBuild|Any CPU.ActiveCfg = Release
-		{C778C43A-81C0-BAB1-5776-229807703664}.DVD-5|Any CPU.ActiveCfg = Release
-		{C778C43A-81C0-BAB1-5776-229807703664}.Release|Any CPU.ActiveCfg = Release
-		{C778C43A-81C0-BAB1-5776-229807703664}.SingleImage|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B3D25292-C019-4BFB-A4A8-BD1DA2CDE256}
 	EndGlobalSection
 EndGlobal
