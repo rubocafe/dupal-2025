@@ -48,7 +48,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Resources\DupalLogo.ico</ApplicationIcon>
@@ -1004,13 +1004,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <Content Include="Resources\CareTakers.png" />
-    <Content Include="Resources\Ionic.Zip.dll" />
+    <Resource Include="Resources\Ionic.Zip.dll" />
     <EmbeddedResource Include="Resources\PayMaster.png" />
     <EmbeddedResource Include="Resources\PaySlips.png" />
-    <Content Include="Resources\PdfSharp_1.31\MigraDoc.DocumentObjectModel-WPF.dll" />
-    <Content Include="Resources\PdfSharp_1.31\MigraDoc.Rendering-WPF.dll" />
-    <Content Include="Resources\PdfSharp_1.31\MigraDoc.RtfRendering-WPF.dll" />
-    <Content Include="Resources\PdfSharp_1.31\PdfSharp-WPF.dll" />
+    <Resource Include="Resources\PdfSharp_1.31\MigraDoc.DocumentObjectModel-WPF.dll" />
+    <Resource Include="Resources\PdfSharp_1.31\MigraDoc.Rendering-WPF.dll" />
+    <Resource Include="Resources\PdfSharp_1.31\MigraDoc.RtfRendering-WPF.dll" />
+    <Resource Include="Resources\PdfSharp_1.31\PdfSharp-WPF.dll" />
     <EmbeddedResource Include="Resources\PremierSales.png" />
     <EmbeddedResource Include="Resources\SupervisorAndBackOffice.png" />
     <EmbeddedResource Include="Resources\Tick.png" />
