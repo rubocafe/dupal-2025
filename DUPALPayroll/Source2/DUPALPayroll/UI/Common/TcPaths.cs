@@ -107,7 +107,7 @@ namespace DUPALPayroll.UI.Common
         public static string GetDuPalLogoPath()
         {
             FileInfo exeInfo = new FileInfo(Assembly.GetExecutingAssembly().FullName);
-            string path = string.Format("{0}\\Resources\\DuPalLogo.jpg", exeInfo.Directory.FullName);
+            string path = string.Format("{0}\\DuPalLogo.jpg", exeInfo.Directory.FullName);
 
             return path;
         }
