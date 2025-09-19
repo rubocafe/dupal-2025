@@ -3,10 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\ruchira\\Documents\\GitHub\\dupal-2025\\Payroll\\Programs\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Payroll||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{45BCEDA8-3F54-49D3-AD4B-F48AD9032EF8}|Payroll\\Payroll.csproj|c:\\users\\ruchira\\documents\\github\\dupal-2025\\payroll\\programs\\payroll\\ui\\business\\generate\\tcbusinesssalaryslipscreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45BCEDA8-3F54-49D3-AD4B-F48AD9032EF8}|Payroll\\Payroll.csproj|solutionrelative:payroll\\ui\\business\\generate\\tcbusinesssalaryslipscreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{45BCEDA8-3F54-49D3-AD4B-F48AD9032EF8}|Payroll\\Payroll.csproj|c:\\users\\ruchira\\documents\\github\\dupal-2025\\payroll\\programs\\payroll\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|a54ad834-9219-4aa6-b589-607af21c3e26"
+      "AbsoluteMoniker": "D:0:0:{45BCEDA8-3F54-49D3-AD4B-F48AD9032EF8}|Payroll\\Payroll.csproj|c:\\users\\ruchira\\documents\\github\\dupal-2025\\payroll\\programs\\payroll\\ui\\business\\generate\\tcsalaryslipscreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{45BCEDA8-3F54-49D3-AD4B-F48AD9032EF8}|Payroll\\Payroll.csproj|solutionrelative:payroll\\ui\\business\\generate\\tcsalaryslipscreator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -16,8 +18,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TcBusinessSalarySlipsCreator.cs",
+              "DocumentMoniker": "C:\\Users\\ruchira\\Documents\\GitHub\\dupal-2025\\Payroll\\Programs\\Payroll\\UI\\Business\\Generate\\TcBusinessSalarySlipsCreator.cs",
+              "RelativeDocumentMoniker": "Payroll\\UI\\Business\\Generate\\TcBusinessSalarySlipsCreator.cs",
+              "ToolTip": "C:\\Users\\ruchira\\Documents\\GitHub\\dupal-2025\\Payroll\\Programs\\Payroll\\UI\\Business\\Generate\\TcBusinessSalarySlipsCreator.cs",
+              "RelativeToolTip": "Payroll\\UI\\Business\\Generate\\TcBusinessSalarySlipsCreator.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T17:59:43.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TcSalarySlipsCreator.cs",
+              "DocumentMoniker": "C:\\Users\\ruchira\\Documents\\GitHub\\dupal-2025\\Payroll\\Programs\\Payroll\\UI\\Business\\Generate\\TcSalarySlipsCreator.cs",
+              "RelativeDocumentMoniker": "Payroll\\UI\\Business\\Generate\\TcSalarySlipsCreator.cs",
+              "ToolTip": "C:\\Users\\ruchira\\Documents\\GitHub\\dupal-2025\\Payroll\\Programs\\Payroll\\UI\\Business\\Generate\\TcSalarySlipsCreator.cs",
+              "RelativeToolTip": "Payroll\\UI\\Business\\Generate\\TcSalarySlipsCreator.cs",
+              "ViewState": "AgIAAB8BAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T17:54:05.711Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f53-6d01-11d2-aa7d-00c04f990343}"
@@ -25,18 +53,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Payroll",
-              "DocumentMoniker": "C:\\Users\\ruchira\\Documents\\GitHub\\dupal-2025\\Payroll\\Programs\\Payroll\\Payroll.csproj",
-              "RelativeDocumentMoniker": "Payroll\\Payroll.csproj",
-              "ToolTip": "C:\\Users\\ruchira\\Documents\\GitHub\\dupal-2025\\Payroll\\Programs\\Payroll\\Payroll.csproj",
-              "RelativeToolTip": "Payroll\\Payroll.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-09-12T10:40:32.882Z",
-              "EditorCaption": ""
             }
           ]
         }
