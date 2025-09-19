@@ -1,7 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ruchira\\GitHub\\dupal-2025\\DUPALPayroll\\Source2\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\ruchira\\Documents\\GitHub\\dupal-2025\\DUPALPayroll\\Source2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B786A604-A6B8-44B9-9FF3-FE9259D11C63}|DUPALPayroll\\DUPALPayroll.csproj|c:\\users\\ruchira\\documents\\github\\dupal-2025\\dupalpayroll\\source2\\dupalpayroll\\general\\tcformatter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B786A604-A6B8-44B9-9FF3-FE9259D11C63}|DUPALPayroll\\DUPALPayroll.csproj|solutionrelative:dupalpayroll\\general\\tcformatter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +23,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TcFormatter.cs",
+              "DocumentMoniker": "C:\\Users\\ruchira\\Documents\\GitHub\\dupal-2025\\DUPALPayroll\\Source2\\DUPALPayroll\\General\\TcFormatter.cs",
+              "RelativeDocumentMoniker": "DUPALPayroll\\General\\TcFormatter.cs",
+              "ToolTip": "C:\\Users\\ruchira\\Documents\\GitHub\\dupal-2025\\DUPALPayroll\\Source2\\DUPALPayroll\\General\\TcFormatter.cs",
+              "RelativeToolTip": "DUPALPayroll\\General\\TcFormatter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T09:55:29.476Z",
+              "EditorCaption": ""
             }
           ]
         }
