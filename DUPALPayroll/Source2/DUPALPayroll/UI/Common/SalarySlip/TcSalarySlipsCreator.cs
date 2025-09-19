@@ -190,9 +190,9 @@ namespace DUPALPayroll.UI.Common.SalarySlip
         paragraph.Format.Alignment = ParagraphAlignment.Left;
 
         // Address
-        paragraph = companyAddressFrame.AddParagraph("33 1/1, Skelton Gardens,");
+        paragraph = companyAddressFrame.AddParagraph("209/2, 2nd Floor, Union Place");
         paragraph.AddLineBreak();
-        paragraph.AddText("Colombo 5, Sri Lanka");
+        paragraph.AddText("Colombo 2, Sri Lanka");
         SetSmallFontToParagraph(paragraph);
         paragraph.Format.Alignment = ParagraphAlignment.Left;
 
